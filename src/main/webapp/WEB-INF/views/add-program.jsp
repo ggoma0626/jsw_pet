@@ -73,6 +73,8 @@
 			<input type="file" id="other-file" style="display: none;"/>						
 				<div id="add-other-img-btn" class="f-img-add-btn">
 					<i class="fa-solid fa-plus"></i>
+					
+					
 				</div>																	
 			</div>
 			
