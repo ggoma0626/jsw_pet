@@ -1,0 +1,18 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="program_other_img">	
+
+	<select id="findByProgramIdx" parameterType="Integer" resultType="ProgramOtherImg">
+		SELECT *
+		FROM program_other_img
+		WHERE pro_idx = #{pro_idx}
+	</select>
+	
+
+	<insert id="save" parameterType="ProgramOtherImg">
+		INSERT INTO program_other_img
+		(pro_idx, other_img_url, created_date)
+		VALUES
+		(#{pro_idx}, #{other_img_url}, SYSDATE())
+	</insert>	 
+	
+</mapper>

@@ -1,0 +1,38 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pet_program">	
+
+	<select id="findByUserIdx" resultType="PetProgram" parameterType="Integer">
+		SELECT *
+		FROM pet_program AS p
+		INNER JOIN user AS u
+		ON p.user_idx = u.user_idx
+		WHERE p.user_idx = #{user_idx}	
+	</select>
+
+	
+	<select id="findByIdx" resultType="PetProgram" parameterType="Integer">
+		SELECT *
+		FROM pet_program AS p
+		INNER JOIN user AS u
+		ON p.user_idx = u.user_idx
+		WHERE p.pro_idx = #{pro_idx}	
+	</select>
+
+	<select id="findChunk" resultType="PetProgram" parameterType="HashMap">
+		SELECT *
+		FROM pet_program AS p
+		INNER JOIN user AS u
+		ON p.user_idx = u.user_idx		
+		ORDER BY p.pro_idx DESC 
+		LIMIT #{start}, #{cnt}
+	</select>
+
+	<insert id="save" parameterType="PetProgram" useGeneratedKeys="true" keyProperty="pro_idx">
+		INSERT INTO pet_program
+		(title, content, type, user_idx, poster_img_url, created_date)
+		VALUES
+		(#{title}, #{content}, #{type} , #{user_idx}, #{poster_img_url}, SYSDATE())
+	</insert>
+	  
+	
+</mapper>

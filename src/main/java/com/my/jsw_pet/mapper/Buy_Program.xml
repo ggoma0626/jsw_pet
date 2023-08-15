@@ -1,0 +1,39 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="buy_program">
+
+	<select id="findByUserIdx" parameterType="Integer" resultType="BuyProgram">
+		SELECT *
+		FROM buy_program AS bp
+		INNER JOIN pet_program AS pp
+		ON bp.pro_idx = pp.pro_idx 
+		INNER JOIN user AS u
+		ON pp.user_idx = u.user_idx 		
+		WHERE bp.user_idx = #{user_idx}	
+	</select>
+
+	<select id="findByProgram" parameterType="Integer" resultType="BuyProgram">
+		SELECT *
+		FROM buy_program AS bp
+		INNER JOIN user AS u 
+		ON bp.user_idx = u.user_idx	
+		WHERE bp.pro_idx = #{pro_idx}
+			 
+	</select>
+
+	<select id="findByProgramAndUser" parameterType="BuyProgram" resultType="BuyProgram">
+		SELECT * 
+		FROM buy_program
+		WHERE pro_idx = #{pro_idx}
+		AND user_idx = #{user_idx}
+		
+	</select>	
+
+	<insert id="save" parameterType="BuyProgram">
+		INSERT INTO buy_program
+		(pro_idx, user_idx, created_date)
+		VALUE
+		(#{pro_idx}, #{user_idx}, SYSDATE())
+	</insert>
+	  
+	
+</mapper>

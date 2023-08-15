@@ -1,0 +1,91 @@
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user">	
+
+	<select id="findByIdx" parameterType="Integer" resultType="User">
+		SELECT *
+		FROM user
+		WHERE user_idx = #{user_idx} 
+	</select>
+
+	<update id="updateUser" parameterType="User">
+		UPDATE user
+		SET
+			name=#{name},
+			birth=#{birth},
+			tel=#{tel},
+			gender=#{gender},
+			like_type=#{like_type}
+		WHERE user_idx=#{user_idx}						
+	</update>
+
+ 	 <select id="findLatestTeacher" parameterType="Integer" resultType="User">
+		SELECT *
+		FROM user
+		WHERE type = 't'
+		ORDER BY user_idx DESC
+		LIMIT 0,#{number}
+	 </select>
+	 
+	 <select id="findById" parameterType="String" resultType="User">
+	 	SELECT *
+	 	FROM user 
+	 	WHERE id = #{id}
+	 </select>
+	 
+ 	 <select id="findByNickname" parameterType="String" resultType="User">
+	 	SELECT *
+	 	FROM user 
+	 	WHERE nickname = #{nickname}
+	 </select>	
+	 
+	 <insert id="save" parameterType="User">
+	 	INSERT INTO user
+	 	(
+	 		id,
+	 		pw, 
+	 		nickname,
+	 		user_img_url, 
+	 		name, 
+	 		birth, 
+	 		gender, 
+	 		tel, 
+	 		type,
+	 		like_type, 
+	 		created_date
+	 	)
+	 	VALUES
+	 	(
+	 		#{id}, 
+	 		MD5(#{pw}), 
+	 		#{nickname},
+	 		#{user_img_url}, 
+	 		#{name}, 
+	 		#{birth}, 
+	 		#{gender}, 
+	 		#{tel}, 
+	 		#{type},
+	 		#{like_type},
+	 		SYSDATE()
+ 		)	 	
+	 </insert>
+	 
+	 <select id="findByIdAndPw" parameterType="User" resultType="User">
+ 	 	SELECT *
+	 	FROM user 
+	 	WHERE id = #{id}
+	 	AND pw = MD5(#{pw})
+	 </select>
+	 
+ 	 <select id="findByUserId" parameterType="User" resultType="User">
+ 	 	SELECT *
+	 	FROM user 
+	 	WHERE name = #{name} 
+	 	AND tel = #{tel}	
+	 </select>
+	 
+ 	 <select id="findByUserPw" parameterType="User" resultType="User">
+ 	 	SELECT *
+	 	FROM user 
+	 	WHERE id = #{id}	 	
+	 </select>
+</mapper>
