@@ -6,6 +6,8 @@
 <meta charset="UTF-8">
 <link rel="icon" href="./image/logo.png"/>
 <title>회원가입</title>
+<%@ include file="/WEB-INF/views/include/lib.jsp" %>
+
 <script src="https://kit.fontawesome.com/43368b31e8.js"
 	crossorigin="anonymous"></script>
 
@@ -23,8 +25,6 @@
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
 
-<!-- jquery cdn -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 <script src="./js/config.js"></script>
 <script src="./js/signup.js"></script>
 

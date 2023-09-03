@@ -6,12 +6,12 @@
 <meta charset="UTF-8">
 <link rel="icon" href="./image/logo.png"/>
 <title>lgoin</title>
+<%@ include file="/WEB-INF/views/include/lib.jsp" %>
+
 <link rel="stylesheet" href="./css/app-style.css"/> 	<!-- 메인 home 화면 css -->
 <link rel="stylesheet" href="./css/signup.css"/> 		<!-- signup 화면 css-->	
 <link rel="stylesheet" href="./css/form.css"/> 			<!-- login 화면 css -->
 
-<!-- jquery cdn -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 <script src="./js/login.js"></script>
 
 </head>

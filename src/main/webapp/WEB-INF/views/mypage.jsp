@@ -8,8 +8,8 @@
 <meta charset="EUC-KR">
 <link rel="icon" href="./image/logo.png"/>
 <title>CRoom-반려견아카데미</title>
+<%@ include file="/WEB-INF/views/include/lib.jsp" %>
 
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"/>
 
 <link rel="stylesheet" href="./css/app-style.css"/>
 <link rel="stylesheet" href="./css/mypage.css"/>
@@ -18,8 +18,6 @@
 
 <script src="https://kit.fontawesome.com/43368b31e8.js" crossorigin="anonymous"></script>
 
-<!-- jquery cdn  -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 
 <script src="./js/mypage.js"></script>

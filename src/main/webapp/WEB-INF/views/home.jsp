@@ -8,12 +8,11 @@
 <meta charset="EUC-KR">
 <link rel="icon" href="./image/logo.png"/>
 <title>CRoom-반려견아카데미</title>
+<%@ include file="/WEB-INF/views/include/lib.jsp" %>
 
 <link rel="stylesheet" href="./css/app-style.css"/>
 <script src="https://kit.fontawesome.com/43368b31e8.js" crossorigin="anonymous"></script>
 
-<!-- jquery cdn  -->
-<script src="https://code.jquery.com/jquery-3.6.4.min.js" integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8=" crossorigin="anonymous"></script>
 <script src="./js/home.js"></script>
 </head>
 <body>

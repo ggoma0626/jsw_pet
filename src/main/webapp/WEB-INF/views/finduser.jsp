@@ -5,6 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>ID / PW 찾기</title>
+<%@ include file="/WEB-INF/views/include/lib.jsp" %>
+
 <!-- 메인 home 화면 css -->
 <link rel="stylesheet" href="./css/app-style.css" />
 

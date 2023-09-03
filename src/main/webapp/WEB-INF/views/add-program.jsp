@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <link rel="icon" href="./image/logo.png"/>
 <title>회원가입</title>
+<%@ include file="/WEB-INF/views/include/lib.jsp" %>
 
 <link rel="stylesheet" href="./css/all.min.css" />
 

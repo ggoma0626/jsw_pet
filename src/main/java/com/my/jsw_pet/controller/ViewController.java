@@ -35,6 +35,18 @@ public class ViewController {
 	@Autowired
 	BuyProgramService buyProgramService;
 	
+
+	String getView(HttpSession s, String page) {
+		
+		User me = (User) s.getAttribute("me");
+		
+		if(me == null) {
+			return "redirect:/login";
+		} else {
+			return page;	
+		}	
+	}
+
 	
 	@GetMapping("/mypage")
 	public String mypage(HttpSession Session, Model model) {
@@ -93,7 +105,8 @@ public class ViewController {
 			model.addAttribute("isBuy","y");
 		}
 		
-		return "detail-program";
+		return getView(session,"detail-program"); 
+			
 	}
 	
 	@GetMapping("/login")
@@ -127,10 +140,22 @@ public class ViewController {
 	}
 	
 	@GetMapping("/add-program")
-	public String addProgram() {
+	public String addProgram(HttpSession session) {
 		
-		return "add-program";
+		return getView(session,"add-program");
 	}
+	
+	@GetMapping("/notice")
+	public String notice() {
+		
+		return "notice";
+	}
+	
+	@GetMapping("/detail-notice")
+	public String detail_notice() {
+		
+		return "detail-notice";
+	}	
 	
 	@GetMapping("/test")
 	public String test() {

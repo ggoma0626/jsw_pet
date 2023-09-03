@@ -1,4 +1,60 @@
 $(document).ready(function() {
+
+
+	const myModal = document.getElementById('staticBackdrop')
+	myModal.addEventListener('shown.bs.modal', () => {
+		//모달이 나올 때 이벤트 실행
+		$('#nt-title').val('');
+		$('#nt-content').val('');
+	})
+	
+	
+	//공지사항 등록버튼
+	$('#add-notice-btn').on('click',function(){		
+		
+		var title = $('#nt-title').val();
+		var content = $('#nt-content').val();
+		
+		if(title.length == 0) {
+			alert('제목을 입력하세요');
+		}
+		
+		if(content.length == 0) {
+			alert('내용을 입력하세요');
+		}
+		
+		var element = $(this);
+		
+		// 더블클릭 방지
+		element.css('pointer-events', 'none')
+		
+		$.ajax({
+			url: './notice/save',
+			type: 'post',
+			data: {
+				title: title,
+				content: content
+			},
+			success:function(json){	
+				element.css('pointer-events', 'auto')					
+				// Modal 닫기 클릭 트리거		
+				if(json == 'ok') {
+					alert('공지사항 등록 완료');
+					$('#nt-close-modal-btn').trigger('click')
+				}
+			},
+			error:function(){
+				element.css('pointer-events', 'auto')									
+			}
+		})
+	});
+
+
+
+
+
+
+		
 	
 	$('#go-mypage-btn').on('click',function(){		
 		location.href='./mypage';			
