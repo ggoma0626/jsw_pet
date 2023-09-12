@@ -3,7 +3,6 @@ package com.my.jsw_pet.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
-import javax.websocket.Session;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,10 +11,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.my.jsw_pet.service.BuyProgramService;
+import com.my.jsw_pet.service.NoticeService;
 import com.my.jsw_pet.service.PetProgramService;
 import com.my.jsw_pet.service.ProgramOtherImgService;
 import com.my.jsw_pet.service.UserService;
 import com.my.jsw_pet.vo.BuyProgram;
+import com.my.jsw_pet.vo.Notice;
 import com.my.jsw_pet.vo.PetProgram;
 import com.my.jsw_pet.vo.ProgramOtherImg;
 import com.my.jsw_pet.vo.User;
@@ -34,6 +35,10 @@ public class ViewController {
 	
 	@Autowired
 	BuyProgramService buyProgramService;
+	
+	@Autowired
+	NoticeService noticeService;
+	
 	
 
 	String getView(HttpSession s, String page) {
@@ -152,7 +157,12 @@ public class ViewController {
 	}
 	
 	@GetMapping("/detail-notice")
-	public String detail_notice() {
+	public String detail_notice(Model model,
+			@RequestParam(value="nt_idx") int nt_idx) {
+		
+		Notice notice = noticeService.findByIdx(nt_idx);
+		model.addAttribute("notice", notice);
+		
 		
 		return "detail-notice";
 	}	

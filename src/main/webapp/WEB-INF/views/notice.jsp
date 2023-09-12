@@ -48,7 +48,7 @@
 	<!-- header 호출 -->
 	<%@ include file="/WEB-INF/views/include/header.jsp" %>
 		
-	<div class="info-container" style="background: #fff;">
+	<div class="info-container min-h" style="background: #fff;">
 		<div>
 			<h4 style="font-size:17px; font-weight: 700;">공지사항</h4>
 			  

@@ -26,9 +26,45 @@
 	<!-- header 호출 -->
 	<%@ include file="/WEB-INF/views/include/header.jsp" %>
 		
-	<div class="info-container" style="background: #fff;">
+	<div class="info-container min-h" style="background: #fff;">
 		<div>
-			<h4 style="font-size:17px; font-weight: 700;">공지사항 제목</h4>
+			<h4 style="font-size:24px; font-weight: 700;">${notice.title}</h4>
+			<h5 style="font-size:13px; font-weight: 700; color: #999; margin-top: 30px;">${notice.created_date}</h5>
+			
+			<p style="margin-top: 40px; width: 60%; border-top: 1px solid #dedede;padding-top: 20px;">
+				${notice.content}
+			</p>
+			
+			<div class="reply-container" style="border-top: 1px solid #dedede; padding-top: 10px;margin-top: 50px;">
+				<h6 style="color:#222; font-weight: 700; font-size: 14px;">댓글쓰기</h6>
+				<textarea style="width: 500px; height: 120px; resize: none; padding: 4px; font-size: 13px;"></textarea>
+				
+				<!-- 댓글 start -->
+				<div id="reply-list" style="margin-top:40px;">
+					<nav class="reply-box">
+						<img src="https://www.kukinews.com/data/kuk/image/2023/03/01/kuk202303010100.494x.0.jpg"/>
+						<div>
+							<span class="nick">김태희</span>
+							<p class="content">
+								안녕하세요 김태희 입니다. 잘 부탁 드립니다.
+							</p>
+							<span class="add-btn">답글</span>
+						</div>
+					</nav>
+				<!-- 답글 start -->
+					<nav class="reply-box child">
+						<img src="https://www.kukinews.com/data/kuk/image/2023/03/01/kuk202303010100.494x.0.jpg"/>
+						<div>
+							<span class="nick">김태희</span>
+							<p class="content">
+								안녕하세요 김태희 입니다. 잘 부탁 드립니다.
+							</p>
+						</div>
+					</nav>							
+				<!-- 답글 end -->																						
+				</div>
+									
+			</div>
 			  
 		</div>
 	</div>

@@ -15,6 +15,10 @@ public class NoticeDao {
 	@Autowired
 	SqlSession s;
 	
+	public Notice findByIdx(int nt_idx) {
+		return s.selectOne("notice.findByIdx", nt_idx);
+	}
+	
 	public int getCount() {
 		return s.selectOne("notice.getCount");
 	}

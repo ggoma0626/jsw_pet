@@ -15,6 +15,10 @@ public class NoticeService {
 	@Autowired
 	NoticeDao noticedao;
 	
+	public Notice findByIdx(int nt_idx) {
+		return noticedao.findByIdx(nt_idx);
+	}
+	
 	public int getCount() {
 		return noticedao.getCount();
 	}

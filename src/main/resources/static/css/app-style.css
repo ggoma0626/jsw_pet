@@ -45,6 +45,10 @@ header {
 	color: var(--main-color);
 }	
 
+.info-container.min-h {
+	min-height: calc(100vh - 270px)	
+}
+
 button.border-1-btn {
 	outline: none;
  	background: transparent; /* 투명 */
@@ -291,3 +295,38 @@ button.border-2-btn.white {
 	left: 0; 
 	background: rgba(0,0,0,0.5)
 }
+
+
+
+
+
+
+
+/* 댓글 관련 css START */
+.reply-box {
+	display: flex; 
+	margin-top:24px;
+}
+
+/* 답글 일 경우 */
+.reply-box.child {
+	display: flex; padding-left: 30px; margin-top: 12px
+}
+/* 답글 일 경우 */
+
+.reply-box img {
+	width: 40px;height: 40px;margin-right: 15px; border-radius: 50%;
+}
+
+.reply-box .nick {
+	font-size:12px; font-weight: 700;
+}
+
+.reply-box .content {
+	font-size:13px; margin-top: 3px;
+}
+
+.reply-box .add-btn {
+	color: #1D8AFF; font-size:12px; cursor: pointer;
+}
+/* 댓글 관련 css END */

@@ -42,7 +42,7 @@ $(document).ready(function() {
 								
 					$.each(json,function(index, item){
 						$('#notice-list').append(`
-						    <tr class="notice-box">
+						    <tr class="notice-box" data-nt-idx="${item.nt_idx}">
 						      <th scope="row">${item.nt_idx}</th>
 						      <td>${item.title}</td>
 						      <td>${item.created_date}</td>
@@ -59,7 +59,8 @@ $(document).ready(function() {
 
 
 	$(document).on('click','.notice-box',function(){
-		location.href = './detail-notice';
+		var noticeIdx = $(this).data('nt-idx')
+		location.href = './detail-notice?nt_idx=' + noticeIdx;
 	})
 	
 	
