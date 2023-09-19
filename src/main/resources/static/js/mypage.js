@@ -26,9 +26,7 @@ $(document).ready(function() {
 		},
 		error:function(err){
 			console.log(err);
-		}
-		
-		
+		}		
 	})		
 		
 	//async 대신 $(document).on('click',function() 으로 할수도 있음	

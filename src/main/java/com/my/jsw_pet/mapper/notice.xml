@@ -23,7 +23,7 @@
 	<insert id="save" parameterType="Notice">
 		INSERT INTO notice
 		(title, content, created_date)
-		VALUE
+		VALUES
 		(#{title}, #{content}, SYSDATE())
 	</insert>
 		

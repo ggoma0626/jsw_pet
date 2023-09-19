@@ -19,7 +19,7 @@
 
 
 <script src="./js/lib/twbs-pagination.min.js"></script>
-<script src="./js/notice.js"></script>
+<script src="./js/detail-notice.js"></script>
 </head>
 <body>
 	
@@ -28,6 +28,9 @@
 		
 	<div class="info-container min-h" style="background: #fff;">
 		<div>
+		
+			<input type="hidden" id="this-notice-idx" value="${notice.nt_idx}"/>
+			
 			<h4 style="font-size:24px; font-weight: 700;">${notice.title}</h4>
 			<h5 style="font-size:13px; font-weight: 700; color: #999; margin-top: 30px;">${notice.created_date}</h5>
 			
@@ -36,9 +39,16 @@
 			</p>
 			
 			<div class="reply-container" style="border-top: 1px solid #dedede; padding-top: 10px;margin-top: 50px;">
-				<h6 style="color:#222; font-weight: 700; font-size: 14px;">댓글쓰기</h6>
-				<textarea style="width: 500px; height: 120px; resize: none; padding: 4px; font-size: 13px;"></textarea>
 				
+				<h6 style="color:#222; font-weight: 700; font-size: 14px;">댓글쓰기</h6>
+				<textarea id="parent-reply-content" class="form-txtarea"></textarea>
+				<div style="display: flex; justify-content: center; margin-top: 5px;">
+					<button id= "add-parent-reply-btn" class= "form-btn" style="margin-left: 40px;" >등록</button>
+					<button id= "cancel-btn" class= "form-btn" style="margin-left: 7px;">취소</button>
+				</div>					
+
+					
+
 				<!-- 댓글 start -->
 				<div id="reply-list" style="margin-top:40px;">
 					<nav class="reply-box">
@@ -51,6 +61,8 @@
 							<span class="add-btn">답글</span>
 						</div>
 					</nav>
+
+					
 				<!-- 답글 start -->
 					<nav class="reply-box child">
 						<img src="https://www.kukinews.com/data/kuk/image/2023/03/01/kuk202303010100.494x.0.jpg"/>
