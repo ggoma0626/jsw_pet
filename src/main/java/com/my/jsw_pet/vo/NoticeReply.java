@@ -10,6 +10,26 @@ public class NoticeReply {
 	private String created_date = null;
 	
 	
+	//user
+	private String nickname = null;
+	private String user_img_url = null;
+	
+	
+	
+	public String getNickname() {
+		return nickname;
+	}
+	public void setNickname(String nickname) {
+		this.nickname = nickname;
+	}
+	public String getUser_img_url() {
+		return user_img_url;
+	}
+	public void setUser_img_url(String user_img_url) {
+		this.user_img_url = user_img_url;
+	}
+	
+	
 	public int getNt_rp_idx() {
 		return nt_rp_idx;
 	}

@@ -340,7 +340,7 @@ textarea.form-txtarea{
 	margin-top: 3px;
 }
 
-.reply-box .add-btn {
+.reply-box .open-child-reply-btn {
 	color: #1D8AFF; 
 	font-size:12px; 
 	cursor: pointer;

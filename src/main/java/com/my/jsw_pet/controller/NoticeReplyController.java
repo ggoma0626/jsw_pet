@@ -22,13 +22,14 @@ public class NoticeReplyController {
 	@Autowired
 	NoticeReplyService noticeReplyService;
 	
-	@GetMapping("findByIdx")
-	public List<NoticeReply> findByIdx(
+	@GetMapping("fineByNtIdx")
+	public List<NoticeReply> fineByNtIdx(
 			@RequestParam(value="nt_idx") int nt_idx			
 			) {
 						
 		return noticeReplyService.findByNtIdx(nt_idx);  
 	}
+	
 	
 	@PostMapping("save")
 	public String save(

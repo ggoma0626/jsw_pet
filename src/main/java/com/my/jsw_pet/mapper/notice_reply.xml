@@ -3,9 +3,12 @@
 		
 	<select id="fineByNtIdx" parameterType="Integer" resultType="NoticeReply">
 		SELECT *
-		FROM notice_reply
-		WHERE nt_idx = #{nt_idx}
+		FROM notice_reply AS nr
+		INNER JOIN user AS u
+			ON nr.user_idx = u.user_idx
+		WHERE nr.nt_idx = #{nt_idx}
 	</select>		
+	
 	<insert id="save" parameterType="NoticeReply">
 		INSERT INTO notice_reply
 		(nt_idx, user_idx, parent_nt_rp_idx, content, created_date)

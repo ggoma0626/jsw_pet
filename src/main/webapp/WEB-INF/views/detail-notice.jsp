@@ -51,7 +51,7 @@
 
 				<!-- 댓글 start -->
 				<div id="reply-list" style="margin-top:40px;">
-					<nav class="reply-box">
+<!-- 					<nav class="reply-box">
 						<img src="https://www.kukinews.com/data/kuk/image/2023/03/01/kuk202303010100.494x.0.jpg"/>
 						<div>
 							<span class="nick">김태희</span>
@@ -63,7 +63,7 @@
 					</nav>
 
 					
-				<!-- 답글 start -->
+				답글 start
 					<nav class="reply-box child">
 						<img src="https://www.kukinews.com/data/kuk/image/2023/03/01/kuk202303010100.494x.0.jpg"/>
 						<div>
@@ -72,7 +72,7 @@
 								안녕하세요 김태희 입니다. 잘 부탁 드립니다.
 							</p>
 						</div>
-					</nav>							
+					</nav> -->							
 				<!-- 답글 end -->																						
 				</div>
 									
