@@ -27,6 +27,7 @@
 		LIMIT #{start}, #{cnt}
 	</select>
 
+	<!-- useGeneratedKeys="true" keyProperty="pro_idx" 이거를 해줌으로써 자동증가된 Idx를 받아올 수 있음  -->
 	<insert id="save" parameterType="PetProgram" useGeneratedKeys="true" keyProperty="pro_idx">
 		INSERT INTO pet_program
 		(title, content, type, user_idx, poster_img_url, created_date)

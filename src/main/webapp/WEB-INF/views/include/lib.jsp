@@ -1,3 +1,9 @@
+<!-- 모든 페이지에 적용 시키려고 압축해서 넣어준거
+
+include file="/WEB-INF/views/include/lib.jsp" 로 쓰임
+
+-->
+
 <!-- bootstrap cdn  -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 

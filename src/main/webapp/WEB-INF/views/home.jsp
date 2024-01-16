@@ -146,6 +146,7 @@
 	</div>
 	
 	
+	<!-- Model 방식  -->
 	<div class="info-container" style="background: #fff;">
 		<div>
 			<h2>최근 등록된 전문가들</h2>

@@ -28,7 +28,7 @@
 		
 	<div class="info-container min-h" style="background: #fff;">
 		<div>
-		
+			<!-- model.addAttribute("notice", notice); key값임 notice -->
 			<input type="hidden" id="this-notice-idx" value="${notice.nt_idx}"/>
 			
 			<h4 style="font-size:24px; font-weight: 700;">${notice.title}</h4>

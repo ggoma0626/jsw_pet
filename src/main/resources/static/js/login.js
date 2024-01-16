@@ -5,10 +5,13 @@ $(document).ready(function() {
 		location.href = './signup';
 	});
 	
+	/* 홈 버튼 */
 	$('#home-btn').on('click',function(){		
 		location.href='./';			
 	});		
 	
+	
+	/* 로그인 버튼 */
 	$('#login-btn').on('click',function() {
 
 		var id = $('#id').val();

@@ -67,15 +67,6 @@ public class ViewController {
 	}
 	
 	
-	@GetMapping("/")
-	public String home(Model model) {
-		
-		List<User> list = userService.findLatestTeacher(4);
-		
-		model.addAttribute("teachers", list);
-		return "home";
-	}
-	
 	@GetMapping("/detail-program")
 	public String detailProgram(Model model,
 				@RequestParam(value="pro_idx") int pro_idx,
@@ -100,6 +91,7 @@ public class ViewController {
 		bp.setPro_idx(pro_idx);
 		bp.setUser_idx(user_idx);
 		
+		// 로그인 유저(==나) 가 상세보기에 나오는 프로그램을 신청(구매) 했는지 체크					
 		BuyProgram result = buyProgramService.findByProgramAndUser(bp);
 		
 		if(result==null) {
@@ -112,6 +104,16 @@ public class ViewController {
 		
 		return getView(session,"detail-program"); 
 			
+	}
+	
+	
+	@GetMapping("/")
+	public String home(Model model) {
+		
+		List<User> list = userService.findLatestTeacher(4);
+		
+		model.addAttribute("teachers", list);
+		return "home";
 	}
 	
 	@GetMapping("/login")
@@ -173,6 +175,19 @@ public class ViewController {
 		return "test";
 	}
 	
+	@GetMapping("/room")
+	public String room() {
+		
+		return "room";
+	}
 	
+	@GetMapping("/chat")
+	public String chat(
+			@RequestParam(value="nick") String nick,
+			@RequestParam(value="room") String roomName
+			) {
+		
+		return "chat";
+	}
 
 }

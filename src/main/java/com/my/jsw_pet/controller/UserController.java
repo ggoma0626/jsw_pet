@@ -21,7 +21,7 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	// user update
+	// user 정보수정
 	@PostMapping("/updateUser")
 	public String updateUser(
 			@RequestParam(value="name") String name,
@@ -114,9 +114,11 @@ public class UserController {
 		return "ok";
 	}
 	
+	// 로그아웃
 	@PostMapping("/logout")
 	public String logout(HttpSession session) {
-		session.invalidate(); // 세션파괴, 삭제
+		// 세션파괴, 삭제
+		session.invalidate(); 
 		return "ok";
 	}
 	

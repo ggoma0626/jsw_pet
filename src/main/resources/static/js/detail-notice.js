@@ -8,10 +8,10 @@ $(document).ready(function(){
 			nt_idx: $('#this-notice-idx').val(),
 		},
 		async : false,
-		success:function(json){
+		success:function(jsonArr){
 			
-			$.each(json,function(index, item){				
-				//댓글 배치
+			$.each(jsonArr,function(index, item){				
+				//댓글 배치 , not_idc == 0은 ? 부모 댓글 일 때
 				if(item.parent_nt_rp_idx == 0){
 					$('#reply-list').append(`
 						<nav class="reply-box" data-nt-rp-idx="${item.nt_rp_idx}">
@@ -29,8 +29,8 @@ $(document).ready(function(){
 			});
 			
 			
-			//답글 배치
-			$.each(json,function(index, item){				
+			//답글 배치, not_idc != 0은 ? 자식 댓글 일 때
+			$.each(jsonArr,function(index, item){				
 				if(item.parent_nt_rp_idx != 0){
 					var parent = $(`.reply-box[data-nt-rp-idx="${item.parent_nt_rp_idx}"]`)
 					parent.after(`
@@ -52,7 +52,10 @@ $(document).ready(function(){
 		}		
 	})	
 	
+	
+	/* 답글 버튼 클릭 시 입력 창 */
 	$(document).on('click','.open-child-reply-btn',function(){
+		/* 답글버튼 연속 클릭 안되게 , pointer-events */
 		$(this).css('pointer-events','none');
 		$(this).after(`		
 			<br/>

@@ -1,4 +1,5 @@
 
+/* 두번 누르기 방지 한번만 눌러도됨 중복요청 x */
 var enableLoadMore = true;
 $(document).ready(function() {
 	
@@ -22,6 +23,7 @@ $(document).ready(function() {
 	
 })
 
+/* 프로그램 리스트 불러오기 16개씩*/
 function getPrograms(start) {
 	$.ajax({
 		url: './program/getChunk',

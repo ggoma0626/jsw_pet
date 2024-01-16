@@ -1,4 +1,8 @@
-/* */
+/* 
+
+	Base64 
+
+*/
 
 const firebaseConfig = {
   apiKey: "AIzaSyChkpskHv7xU58tR4JmZ1L1Px9AT_epNIs",
@@ -13,6 +17,10 @@ const firebaseConfig = {
 var config = {
 	
 	getBase64 : function(file){
+		//	      Promise -> 비동기를 동기로 .. 기다려줌  
+		/*
+		new Promise를 사용해서 then, js async await 사용 할 수 있음
+		*/		
 	   return new Promise(function(resolve, reject){
 		   var reader = new FileReader();
 		   reader.readAsDataURL(file);

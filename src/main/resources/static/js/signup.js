@@ -3,13 +3,16 @@ $(document).ready(function() {
 	//파일 업로드 테스트
 	
 	/*
- 	 firebase 기본 셋팅
+ 	 firebase 기본 셋팅 start
 	*/
 	if (!firebase.apps.length) {
 		firebase.initializeApp(firebaseConfig);
 	}
 	
 	var storage = firebase.storage();
+	/*END*/
+	
+	// 프로필 이미지를 받기 위해서 선언했음
 	var file;
 
 	$('#preview-img').on('click',function(){
@@ -17,7 +20,9 @@ $(document).ready(function() {
 	});
 	
 	$('#upload-file').on('change',function(){
-		file = $(this)[0].files[0];		
+		file = $(this)[0].files[0];
+		
+		//img 미리보기		
 		getBase64(file).then(function(base64){
 			$('#preview-img').attr('src',base64);
 		});
@@ -38,6 +43,8 @@ $(document).ready(function() {
 		})			
 	});
 	
+	
+	/* firebase storage,  img rul 주소를 리턴 start */
 	function uploadImgAndGetUrl(){
 		return new Promise(function(resolve, reject){
 			
@@ -57,7 +64,7 @@ $(document).ready(function() {
 			})						
 		})		
 	}
-	
+	/* firebase storage end */
 	
 	
 	
@@ -276,6 +283,7 @@ $(document).ready(function() {
 		});
 	});
 	
+	// 불을 다 끄고 내가 선택 한것만 불이 들어오게 해놨음
 	$('.type-box').on('click',function() {
 		var v = $(this).data('value');
 		currentType = v;				

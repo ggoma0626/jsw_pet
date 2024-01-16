@@ -26,6 +26,7 @@ public class PetProgramService {
 	}
 	
 	
+	// @Transactional > 실패시 중간이 아니라 아예 처음으로 셋 	
 	@Transactional
 	public int saveWithOtherImgs(
 				PetProgram pp, 

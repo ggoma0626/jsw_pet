@@ -6,6 +6,7 @@ $(document).ready(function() {
 		url: './program/findByUserIdx',
 		type: 'get',
 		data: {
+			/* Mypage.jsp 에서 user_idx hidden 처리함*/
 			user_idx:$('#me-user-idx').val()
 		},
 		async : false,

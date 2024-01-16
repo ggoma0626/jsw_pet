@@ -10,10 +10,12 @@ $(document).ready(function(){
 	
 	var isMine = false;
 	
+	/* 로그인 한 사람 , 상세보기로 들어 온 사람의 idx를 비교 */
 	if($('#pro-user-idx').val() == $('#my-user-idx').val()) {
 		isMine = true;
 	}
 	
+	/* 프고그램 신청하기 */
 	$('#buy-program').on('click', function(){
 		var con = confirm(`${thisProgram.title} 프로그램을 신청 하시겠습니까?`);
 		
@@ -43,6 +45,7 @@ $(document).ready(function(){
 });
 
 	
+	/* 상세보기 정보 ajax 방식 */	
 	$.ajax({
 		url:'./program/findByIdx',
 		type:'get',
@@ -69,6 +72,7 @@ $(document).ready(function(){
 		
 	});
 	
+	/* 프로그램 교육현장 상세 이미지 불러오기*/	
 	$.ajax({
 		url:'./poi/getImgsByProgram',
 		type:'get',
@@ -92,7 +96,7 @@ $(document).ready(function(){
 		}		
 	})
 	
-	//신청자 현황 불러오기
+	/* 신청자 현황 불러오기 */
 	$.ajax({
 		url : './bp/getByProgram',
 		type : 'get',
@@ -103,6 +107,7 @@ $(document).ready(function(){
 			$.each(jsonList, function(index, item) {
 				
 				var telHtml;
+				
 				if(isMine) {
 					telHtml = `<div class="date">${item.tel}</div>`;
 				}else {

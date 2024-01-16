@@ -1,13 +1,13 @@
 $(document).ready(function() {
 		
-	/*
- 	 firebase 기본 셋팅
-	*/
+	/* firebase 기본 셋팅 */	
 	if (!firebase.apps.length) {
 		firebase.initializeApp(firebaseConfig);
 	}
 	
 	var storage = firebase.storage();
+	/* end */
+	
 	var posterfile;
 	
 	
@@ -30,6 +30,7 @@ $(document).ready(function() {
 				</div>				
 			</div>		
 		`);
+		
 		// 중복 파일 올릴 수 있도록 올리고 초기화
 		$('#other-file').val('');
 	});	
@@ -39,7 +40,7 @@ $(document).ready(function() {
 	
 	
 	
-	//===========사진 여러장 올린더 DELETE===============
+	//===========사진 여러장 올린거 DELETE===============
 	$(document).on('click', '.del-btn', function(){
 		var con = confirm('사진을 삭제 하시겠습니까?');
 		
@@ -59,7 +60,7 @@ $(document).ready(function() {
 		$('#poster-file').trigger('click');
 	});
 	
-	//포스터 이미지 파일 이벤트
+	//포스터 이미지 파일 이벤트 (이미지 체인지) 서버요청X
 	$('#poster-file').on('change',function(){
 		posterfile = $(this)[0].files[0];		
 		
@@ -76,10 +77,9 @@ $(document).ready(function() {
 	
 	
 	
-	
+	// 정보입력 등록버튼
 	$('#submit-btn').on('click', async function() {
-		
-		config.showLoading();
+				
 		
 		var title = $('#title').val();
 		var type = $('#type').val();
@@ -95,6 +95,9 @@ $(document).ready(function() {
 			return;
 		}
 		
+		config.showLoading();
+		
+		// 파일 업로드 후 url 받음		
 		var poster_img_url = await uploadImgAndGetUrl(posterfile);
 		
 		/*
@@ -114,8 +117,9 @@ $(document).ready(function() {
 		});	
 				
 		
-		
+		// img url을 받을 배열
 		var otherImgUrlArray = [];
+		
 		// 확보된 base64Array 박복문 처리 -> 1개씩 업로드
 /*		$.each(base64Array, function(index, b64){
 			var url = await uploadBase64AndGetUrl(b64);

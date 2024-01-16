@@ -27,10 +27,12 @@
 	<%@ include file="/WEB-INF/views/include/header.jsp" %>
 	
 	
+	<!-- sessionScope.meuser_idx == 로그인한 사람 idx, petProgram.user_idx} == 상세보기를 들어 온 user의 idx  -->
 	<input type="hidden" id="pro-user-idx" value="${petProgram.user_idx}"/>
 	<input type="hidden" id="my-user-idx" value="${sessionScope.me.user_idx}"/>
 	
 		
+	<!-- 상세보기 정보 Model 방식  -->		
 	<div class="info-container">
 		<div style="width: 900px;">
 			<div class="two-row-box">

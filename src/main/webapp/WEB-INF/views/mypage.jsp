@@ -7,7 +7,7 @@
 <head>
 <meta charset="EUC-KR">
 <link rel="icon" href="./image/logo.png"/>
-<title>CRoom-반려견아카데미</title>
+<title>마이페이지</title>
 <%@ include file="/WEB-INF/views/include/lib.jsp" %>
 
 
@@ -102,6 +102,7 @@
 			  </thead>
 			  <tbody>
 			  
+			  <!-- list를 불러와서 model방식으로 처리함 -->
 			  <c:forEach items="${ulist}" var="p">			  
 			    <tr class="program-box" style= "cursor: pointer"data-pro-idx="${p.pro_idx}">
 			      <td>
@@ -117,7 +118,8 @@
 			  </tbody>
 			</table>			
 
-
+			
+			<!-- AJAX로 처리했음 -->
 			<h4 style="font-size:17px; font-weight: 700; margin-top: 30px;">내가 만든 프로그램</h4>
 			<table class="table">
 			  <thead>

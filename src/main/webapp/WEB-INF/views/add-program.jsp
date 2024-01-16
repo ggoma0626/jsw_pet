@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <link rel="icon" href="./image/logo.png"/>
-<title>회원가입</title>
+<title>프로그램 등록</title>
 <%@ include file="/WEB-INF/views/include/lib.jsp" %>
 
 <link rel="stylesheet" href="./css/all.min.css" />
@@ -26,13 +26,13 @@
 <script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.3.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-storage.js"></script>
+<script src="https://kit.fontawesome.com/43368b31e8.js" crossorigin="anonymous"></script>
 
 <script src="./js/config.js"></script>
 <script src="./js/add-program-async-await.js"></script>
 
 </head>
 <body>
-
 
 
 
@@ -70,13 +70,18 @@
 							
 			<div class="text">프로그램 설명 이미지</div>
 			<div id="other-imgs-list" style="border: 1px solid #dedede; padding: 10px; border-radius: 10px; display: flex; flex-wrap: wrap;">
-			<!-- 사진 여러장 올리기 -->
-			<input type="file" id="other-file" style="display: none;"/>						
+				<!-- 사진 여러장 올리기 -->
+				<input type="file" id="other-file" style="display: none;"/>						
 				<div id="add-other-img-btn" class="f-img-add-btn">
-					<i class="fa-solid fa-plus"></i>
-					
-					
-				</div>																	
+					<i class="fa-solid fa-plus"></i>									
+				</div>
+				
+<!-- 					<div class="f-one-img-box">					 -->
+<%-- 						<img src="${base64}"/> --%>
+<!-- 						<div class="del-btn"> -->
+<!-- 							<i class="fa-solid fa-circle-minus"></i>	 -->
+<!-- 						</div>				 -->
+<!-- 					</div>																						 -->
 			</div>
 			
 			<button id="submit-btn"class="form-btn">프로그램 등록</button>
